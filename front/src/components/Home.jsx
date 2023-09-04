@@ -32,12 +32,12 @@ function Home() {
                   <br />
                   <div className="lh">
                     <img className="image_h" src="img/house2.png" alt="" />
-                    <a href="/">Home</a>
+                    <a href="/home">Home</a>
                   </div>
                   <br />
                   <div className="lp">
                     <img className="image_h" src="img/user3.png" alt="" />
-                    <a href="/profile/1">Profile</a>
+                    <a href="/profile">Profile</a>
                   </div>
                   <br />
                   <br />
