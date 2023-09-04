@@ -80,7 +80,11 @@ export default function Profile() {
               <div className="card_interior">
                 <div className="card_interior_left">
                   <div className="card_interior_img">
-                    <img className="img_user" src="/" alt="" />
+                    <img
+                      className="img_user"
+                      src="/public/img/WhatsApp Image 2023-07-03 at 21.00.23.jpeg"
+                      alt=""
+                    />
                   </div>
                 </div>
                 <div className="card_interior_right">
