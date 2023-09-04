@@ -1,7 +1,7 @@
 const { faker } = require("@faker-js/faker");
 const User = require("../models/User");
 const Tweet = require("../models/Tweet");
-const { random } = require("lodash");
+/* const { random } = require("lodash"); */
 
 faker.locale = "es";
 
@@ -29,7 +29,7 @@ module.exports = async () => {
 
       while (true) {
         try {
-          const randomNumber = faker.datatype.number({ min: 0, max: 19 });
+          const randomNumber = faker.datatype.number({ min: 1, max: 19 });
           randomUser = insertedUsers[randomNumber];
 
           if (String(randomUser._id) !== String(user._id)) {
@@ -46,6 +46,15 @@ module.exports = async () => {
       ) {
         user.following.push(randomUser._id);
         randomUser.followers.push(user._id);
+
+        const tweet = new Tweet({
+          content: faker.lorem.paragraph(),
+          author: user._id,
+          likes: [],
+        });
+
+        await tweet.save();
+        user.tweets.push(tweet._id);
       }
       await user.save();
     }
