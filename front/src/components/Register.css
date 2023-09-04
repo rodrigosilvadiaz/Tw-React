@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.sub_container {
+  display: flex;
+  height: 100%;
+}
+
+.container_blue {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 0%;
+  height: 100vh;
+  background-color: #26a6d1;
+}
+
+.custom-file-upload {
+  display: flex;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  border: 1px solid #ffffff;
+  height: 40px;
+  border-radius: 10px 0 0 10px;
+}
+
+.custom-file-upload:hover {
+  background-color: #b3b3b3;
+  border: 1px solid #b3b3b3;
+}
+
+.file-input-container .custom-file-upload p:hover {
+  color: white;
+}
+
+.file-input-container .custom-file-upload p {
+  font-size: 0.82rem;
+  color: rgb(105, 105, 105);
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 12px;
+  height: 40px;
+}
+
+input[type="file"] {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.selected-file-name {
+  margin-left: 10px;
+  color: #333;
+}
+
+.file-input-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid grey;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.file-input-extension {
+  width: 10px;
+  background-color: #f0f0f0;
+  border-right: 1px solid grey;
+}
+
+.container_blue h2 {
+  color: white;
+  margin: 30px;
+  width: 100%;
+  opacity: 0;
+}
+
+#icone_tweeter {
+  margin: 0;
+  padding: 0;
+  width: 90px;
+  opacity: 0;
+}
+
+#emoji {
+  width: 30px;
+  opacity: 0;
+  margin-left: 10px;
+}
+
+.container_white {
+  background-color: white;
+  margin: auto;
+}
+
+.container_white_int {
+  width: 288px;
+  height: 100vh;
+  text-align: start;
+
+  padding: 0 80px;
+}
+
+.container_white_int input {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 15px;
+  padding-left: 10px;
+  border-radius: 10px;
+  border: 1px solid grey;
+  box-sizing: border-box;
+}
+
+.container_white_int p {
+  padding-bottom: 20px;
+}
+
+.container_white_int h2 {
+  padding-top: 120px;
+}
+
+.container_white_int button {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: none;
+  background-color: #26a6d1;
+  color: white;
+  border-radius: 50px;
+}
+
+.container_white_int button:hover {
+  background-color: #26a6d1a4;
+}
+
+.text-end {
+  text-align: center;
+  padding-top: 20px;
+}
+
+@media (min-width: 576px) {
+  .sub_container {
+    display: flex;
+    background-color: #26a6d1;
+  }
+
+  .container_white {
+    margin-left: 50%;
+  }
+
+  .container_white_int {
+    width: 288px;
+    margin: 0;
+  }
+
+  .container_blue {
+    width: 100%;
+  }
+
+  .container_blue h2 {
+    opacity: 1;
+  }
+
+  #icone_tweeter {
+    opacity: 1;
+  }
+
+  #emoji {
+    opacity: 1;
+  }
+}
