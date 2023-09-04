@@ -1,0 +1,67 @@
+.side-pics {
+	width: 54px;
+	height: 54px;
+}
+
+.side-text {
+	margin-left: 10px;
+}
+
+.btn {
+	width: 5rem;
+	height: 2rem;
+	border-radius: 30px;
+	border: none;
+	background: #26a6d1;
+	color: white;
+	margin-left: auto;
+	cursor: pointer;
+	text-align: center;
+}
+
+.btn:hover {
+	background-color: white;
+	color: #26a6d1;
+	border: 1.5px solid #26a6d1;
+}
+.img-nav-logo{
+	width: 30px;
+	height: 30px;
+}
+.img-nav{
+	width: 23px;
+	height: 23px;
+}
+.newtweet {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 80%;
+	border-radius: 50px;
+	height: 40px;
+	border: none;
+	background-color: #26a6d1;
+	color: white;
+	margin-top: 0px;
+}
+
+.newtweet:hover {
+	background-color: #26a6d194;
+}
+
+.logout {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 80%;
+	border-radius: 50px;
+	height: 40px;
+	border: none;
+	background-color: #d12626;
+	color: white;
+	margin-top: 0px;
+}
+
+.logout:hover {
+	background-color: #d1262694;
+}
