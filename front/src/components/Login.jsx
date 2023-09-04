@@ -48,36 +48,41 @@ function Login() {
             <br />
             <p>Ready to star using Twitter?</p>
             <br />
-            <form action="" onSubmit={handleSubmit} />
-            <input
-              type="email"
-              className="input form-control"
-              id="email"
-              name="email"
-              placeholder="Username or Email"
-            />
-            <br />
-            <input
-              placeholder="Password"
-              type="password"
-              name="password"
-              id="password"
-              value={password}
-              className="input form-control"
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <br />
-            <button type="submit" className="button">
-              Login
-            </button>
-            <div className="text-end">
-              <p>
-                Don't have an account?
-                <Link to="/registro" className="signup">
-                  Sign up
-                </Link>
-              </p>
-            </div>
+            <form action="" onSubmit={handleSubmit}>
+              <label htmlFor="username" className="form-label">
+                Username
+              </label>
+              <input
+                type="text"
+                name="username"
+                id="username"
+                className="form-control"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+              <br />
+              <input
+                placeholder="Password"
+                type="password"
+                name="password"
+                id="password"
+                value={password}
+                className="input form-control"
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <br />
+              <button type="submit" className="button">
+                Login
+              </button>
+              <div className="text-end">
+                <p>
+                  Don't have an account?
+                  <Link to="/registro" className="signup">
+                    Sign up
+                  </Link>
+                </p>
+              </div>
+            </form>
           </div>
         </div>
       </div>
