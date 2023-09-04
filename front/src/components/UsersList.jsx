@@ -5,23 +5,29 @@ import { useSelector } from "react-redux";
 function UsersList() {
   const [users, setUsers] = useState([]);
   const user = useSelector((state) => state.user);
+
   useEffect(() => {
     const getUsers = async () => {
-      const response = await axios({
-        method: "GET",
-        url: "http://localhost:8000/users",
-        headers: {
-          Authorization: "Bearer " + (user && user.token),
-        },
-      });
-      setUsers(response.data);
+      try {
+        const response = await axios.get("http://localhost:8000/users", {
+          headers: {
+            Authorization: "Bearer " + (user && user.token),
+          },
+        });
+        setUsers(response.data);
+      } catch (error) {
+        console.error(error);
+      }
     };
+
     getUsers();
-  }, []);
+  }, [user]);
 
   return (
-    users.length > 0 && (
-      <div>
+    <div>
+      {users.length === 0 ? (
+        <p>Loading...</p>
+      ) : (
         <ul className="list-group">
           {users.map((user) => (
             <li key={user.id} className="list-group-item">
@@ -29,9 +35,7 @@ function UsersList() {
             </li>
           ))}
         </ul>
-      </div>
-    )
+      )}
+    </div>
   );
 }
-
-export default UsersList;
