@@ -26,6 +26,12 @@
   display: flex;
 }
 
+.center_bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .center_h {
   width: 33.33vw;
   height: 100vh;

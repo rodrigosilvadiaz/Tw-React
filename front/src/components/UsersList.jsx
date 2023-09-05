@@ -39,4 +39,4 @@ function UsersList() {
     </div>
   );
 }
-export default UsersList
+export default UsersList;

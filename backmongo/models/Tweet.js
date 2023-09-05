@@ -1,4 +1,4 @@
-const { mongoose, Schema } = require("../dbInitialSetup");;
+const { mongoose, Schema } = require("../dbInitialSetup");
 const User = require("./User");
 
 const tweetterSchema = new mongoose.Schema(
@@ -15,7 +15,7 @@ const tweetterSchema = new mongoose.Schema(
     ],
     content: {
       type: String,
-      required: true,
+      required: false,
     },
   },
   {

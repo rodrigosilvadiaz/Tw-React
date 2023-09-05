@@ -12,15 +12,14 @@ module.exports = async () => {
 
   const generatedTweets = Array.from({ length: 40 }).map(() => {
     const randomNumber = faker.datatype.number({
-      min: 0,
+      min: 1,
       max: users.length - 1,
     });
     const randomUser = users[randomNumber];
 
     const tweet = new Tweet({
-      content: faker.lorem.paragraph(),
       author: randomUser._id,
-      likes: [],
+      content: faker.lorem.paragraph(),
     });
 
     const numLikes = faker.datatype.number({ min: 1, max: 20 });

@@ -5,7 +5,7 @@ const { expressjwt: checkJwt } = require("express-jwt");
 
 userRouter.get(
   "/",
-  checkJwt({ secret: process.env.JWT_SECRET, algorithms: ["HS256"] }),
+  /* checkJwt({ secret: process.env.JWT_SECRET, algorithms: ["HS256"] }), */
   userController.index
 );
 

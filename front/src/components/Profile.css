@@ -161,16 +161,15 @@ input[type="file"] {
   color: #666;
 }
 
-.cc_ {
+.profile .cc_ {
   display: flex;
   padding-top: 10px;
   width: 100%;
   height: 140px;
   border-bottom: 1px solid rgb(219, 219, 219);
-  background-color: #26a6d1;
 }
 
-.center_bottom {
+.profile .center_bottom {
   display: flex;
   justify-content: center;
   align-items: center;

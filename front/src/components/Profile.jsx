@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Profile.css";
+import Users from "./UsersList";
 
 export default function Profile() {
   return (
-    <div>
+    <div className="profile">
       <section className="container_h">
         <div className="sub_container_h">
           <div className="left_h">
@@ -49,7 +50,7 @@ export default function Profile() {
               <div className="white-section">
                 <div>
                   <div className="me-3">
-                    <span className="fw-bold">@username</span>
+                    <span className="fw-bold">{user.firstname}</span>
                     <p className="profile-username">@email</p>
                   </div>
                 </div>
