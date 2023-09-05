@@ -96,6 +96,7 @@ function Home() {
                           <p>@{user.username}</p>
                         </div>
                         <div className="ccc_m">
+                          {console.log({ user })}
                           <p>{tweet.content}</p>
                         </div>
                         <div className="ccc_b">

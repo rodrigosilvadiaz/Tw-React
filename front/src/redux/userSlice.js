@@ -10,9 +10,12 @@ const userSlice = createSlice({
     logout(state, action) {
       return null;
     },
+    register(state, action) {
+      return action.payload;
+    },
   },
 });
 
 const { actions, reducer } = userSlice;
-export const { login, logout } = actions;
+export const { login, logout, register } = actions;
 export default reducer;

@@ -1,5 +1,4 @@
-const { mongoose, Schema } = require("../dbInitialSetup");
-const User = require("./User");
+const { mongoose } = require("../dbInitialSetup");
 
 const tweetterSchema = new mongoose.Schema(
   {

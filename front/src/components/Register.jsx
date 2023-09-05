@@ -1,13 +1,26 @@
-import { useState } from "react";
-import "./Register.css";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { register } from "../redux/userSlice";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 function Register() {
-  const [firstname, setFirstname] = useState("");
-  const [lastname, setLastname] = useState("");
-  const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const { register, handleSubmit } = useForm();
+
+  const registerSubmit = handleSubmit(async (values) => {
+    const response = await axios({
+      url: "http://localhost:8000/register",
+
+      method: "POST",
+
+      data: values,
+    });
+
+    console.log(values);
+  });
+
   return (
     <div>
       <section className="container">
@@ -16,6 +29,7 @@ function Register() {
             <div className="top">
               <img id="icone_tweeter" src="img/twitter.png" alt="" />
             </div>
+
             <div className="down">
               <h2>
                 Hi! Welcome to Twitter Copy
@@ -23,76 +37,89 @@ function Register() {
               </h2>
             </div>
           </div>
+
           <div className="container_white">
             <div className="container_white_int">
               <h2>Sign up</h2>
+
               <br />
+
               <p>Create an account and start using Twitter</p>
+
               <br />
-              <form
-                action="/signup"
-                method="post"
-                enctype="multipart/form-data"
-              >
+
+              <form onSubmit={registerSubmit}>
                 <input
                   type="text"
                   className="input form-control"
                   id="firstname"
                   name="firstname"
                   placeholder="Firstname"
-                  value={firstname}
-                  onChange={(e) => setFirstname(e.target.value)}
+                  {...register("firstname")}
                 />
+
                 <br />
+
                 <input
                   type="text"
                   className="input form-control"
                   id="lastname"
                   name="lastname"
                   placeholder="Lastname"
-                  value={lastname}
-                  onChange={(e) => setLastname(e.target.value)}
+                  {...register("lastname")}
                 />
+
                 <br />
+
                 <input
                   type="email"
                   className="input form-control"
                   id="email"
                   name="email"
                   placeholder="Username or Email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  {...register("email")}
                 />
+
                 <br />
+
                 <input
                   type="text"
                   className="input form-control"
                   id="username"
                   name="username"
                   placeholder="Username"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
+                  {...register("username")}
                 />
+
                 <br />
-                <div className="file-input-container">
+
+                {/* <div className="file-input-container">
+
                   <label className="custom-file-upload" htmlFor="avatar">
+
                     <p>Choose file</p>
+
                   </label>
+
                   <input type="file" id="avatar" name="avatar" />
-                </div>
+
+                </div> */}
+
                 <input
                   type="password"
                   className="input form-control"
                   id="password"
                   name="password"
                   placeholder="Password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  {...register("password")} // Use react-hook-form register here
                 />
+
                 <br />
-                <button type="submit" className="button">
+
+                <button href="/iniciar-sesion" type="submit" className="button">
                   Sign up
                 </button>
+
                 <div className="text-end">
                   <p>
                     Already have an account?{" "}

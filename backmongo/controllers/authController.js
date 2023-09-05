@@ -1,6 +1,8 @@
 const User = require("../models/User");
 const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
+const Tweet = require("../models/Tweet");
+const bcrypt = require("bcrypt");
 
 const authController = {
   tokens: async (req, res) => {
@@ -29,7 +31,7 @@ const authController = {
       id: user.id,
       firstname: user.firstname,
       lastname: user.lastname,
-      username: user.ussername,
+      username: user.username,
       email: user.email,
       avatar: user.avatar,
       frontpage: user.frontPage,
@@ -38,6 +40,37 @@ const authController = {
       followings: user.followings,
       tweets: user.tweets,
     });
+  },
+  register: async (req, res) => {
+    try {
+      const { firstname, lastname, email, username, password } = req.body;
+      const hashedPassword = await bcrypt.hash(password, 10);
+      const newUser = new User({
+        firstname: firstname,
+        lastname: lastname,
+        email: email,
+        username: username,
+        password: hashedPassword,
+      });
+
+      await newUser.save();
+      /*       const token = jwt.sign(
+        { sub: newUser.id, username: newUser.username },
+        process.env.JWT_SECRET
+      ); */
+
+      res.json({
+        /* token, */
+        id: newUser.id,
+        firstname: newUser.firstname,
+        lastname: newUser.lastname,
+        email: newUser.email,
+        avatar: newUser.avatar,
+      });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: "Internal Server Error" });
+    }
   },
 };
 
