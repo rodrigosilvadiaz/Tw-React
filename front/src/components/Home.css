@@ -59,8 +59,7 @@
 
 .campo {
   border: none;
-  width: (100vh - 50px);
-  width: 80%;
+  width: 50px;
   height: 5rem;
   padding-left: 10px;
   outline: none;
@@ -149,9 +148,7 @@
 }
 
 .btn_tweet {
-  display: flex;
-  justify-content: end;
-  padding-left: 388px;
+  width: 70px;
 }
 
 .right {

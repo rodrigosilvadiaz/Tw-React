@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import React from "react";
 import "./Home.css";
+import TweetCreator from "./TweetCreator";
 
 function Home() {
   const navigate = useNavigate();
@@ -59,26 +60,7 @@ function Home() {
                   <div className="title_cc">
                     <h2>Home</h2>
                   </div>
-                  <div className="img_campo">
-                    <img className="img_c" src={user.avatar} alt="" />
-                    <div className="form_twit">
-                      <form action="/home" method="post">
-                        <input
-                          className="campo"
-                          name="tweetText"
-                          placeholder="What's happening"
-                          type="text"
-                          maxLength="140"
-                          required
-                        />
-                        <div className="btn_tweet">
-                          <button className="boton_tweet" type="submit">
-                            Tweet
-                          </button>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
+                  <TweetCreator user={user} />
                 </div>
                 {tweets.map((tweet) => (
                   <div className="center_bottom" key={tweet.id}>
@@ -109,83 +91,6 @@ function Home() {
                     </div>
                   </div>
                 ))}
-              </div>
-              <div className="right">
-                <div className="r_left">
-                  <div className="cont_top">
-                    <h3>What's happening</h3>
-                    <div className="sc_top">
-                      <p>Programming . Trending</p>
-                      <h4>#MongoVsSequialize</h4>
-                      <p>97.5K Tweets</p>
-                    </div>
-                    <div className="sc_top">
-                      <p>Programming . Trending</p>
-                      <h4>#MongoVsSequialize</h4>
-                      <p>97.5K Tweets</p>
-                    </div>
-                    <div className="sc_top">
-                      <p>Programming . Trending</p>
-                      <h4>#MongoVsSequialize</h4>
-                      <p>97.5K Tweets</p>
-                    </div>
-                  </div>
-                  <div className="cont_top">
-                    <h3>What's happening</h3>
-                    <div className="card_info">
-                      <img className="image_user" src="/img/user1.png" alt="" />
-                      <div>
-                        <h4>Hack academy</h4>
-                        <p>@HackAcademyDev</p>
-                      </div>
-                      <button className="btn" type="submit">
-                        Follow
-                      </button>
-                    </div>
-                    <div className="card_info">
-                      <img className="image_user" src="/img/user1.png" alt="" />
-                      <div>
-                        <h4>Hack academy</h4>
-                        <p>@HackAcademyDev</p>
-                      </div>
-                      <button className="btn" type="submit">
-                        Follow
-                      </button>
-                    </div>
-                    <div className="card_info">
-                      <img className="image_user" src="/img/user1.png" alt="" />
-                      <div>
-                        <h4>Hack academy</h4>
-                        <p>@HackAcademyDev</p>
-                      </div>
-                      <button className="btn" type="submit">
-                        Follow
-                      </button>
-                    </div>
-                    <div className="card_info">
-                      <img className="image_user" src="/img/user1.png" alt="" />
-                      <div>
-                        <h4>Hack academy</h4>
-                        <p>@HackAcademyDev</p>
-                      </div>
-                      <button className="btn" type="submit">
-                        Follow
-                      </button>
-                    </div>
-                    <div className="card_info">
-                      <img className="image_user" src="/img/user1.png" alt="" />
-                      <div>
-                        <h4>Hack academy</h4>
-                        <p>@HackAcademyDev</p>
-                      </div>
-                      <button className="btn" type="submit">
-                        Follow
-                      </button>
-                    </div>
-                  </div>
-                  <div></div>
-                </div>
-                <div className="r_right"></div>
               </div>
             </div>
           </section>
