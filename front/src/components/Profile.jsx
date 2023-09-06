@@ -2,8 +2,20 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Profile.css";
 import Users from "./UsersList";
+import { useEffect } from "react";
+import UsersList from "./UsersList";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
-export default function Profile() {
+function Profile() {
+  const navigate = useNavigate();
+  const user = useSelector((state) => state.user);
+  const tweets = useSelector((state) => state.user.tweets);
+
+  useEffect(() => {
+    if (!user) return navigate("/iniciar-sesion");
+  });
+
   return (
     <div className="profile">
       <section className="container_h">
@@ -223,3 +235,5 @@ export default function Profile() {
     </div>
   );
 }
+
+export default Profile;
